@@ -45,7 +45,7 @@ data Pair a where
 instance Eq a => Eq (Pair a) where
   (==) (Pair a b) (Pair a' b') = (a == a') && (b == b')
 
-p = Pair 1 2
+p  = Pair 1 2
 p' = Pair 1 2
 
 -- data Which a = ThisOne a | ThatOne a
@@ -61,3 +61,18 @@ instance Eq a => Eq (Which a) where
 
 ti = ThisOne 1
 ta = ThatOne 1
+
+-- data EitherOr a b = Hello a | Goodbye b
+data EitherOr a b where
+  Hello :: a -> EitherOr a b
+  Goodbye :: b -> EitherOr a b
+
+instance (Eq a, Eq b) => Eq (EitherOr a b) where
+  (==) (Hello x) (Hello y) = x == y
+  (==) (Goodbye x) (Goodbye y) = x == y
+  (==) _ _ = False
+
+eo1 = Hello 1
+eo2 = Hello 1
+eo3 = Goodbye 1
+eo4 = Goodbye 1
