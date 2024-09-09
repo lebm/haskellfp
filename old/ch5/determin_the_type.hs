@@ -12,7 +12,7 @@ c = if False then True else False
 
 d = length [1, 2, 3, 4, 5]
 
-e = (length [1, 2, 3, 4]) > (length "teste")
+e = length [1, 2, 3, 4] > length "teste"
 
 x = 5
 

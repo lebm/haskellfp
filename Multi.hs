@@ -1,13 +1,22 @@
 module Multi where
 
-multi1    = x * y
-  where x = 5
-        y = 6
+multi1 = x * y
+  where
+    x = 5
+    y = 6
 
-multi2    = x * 3 + y
-  where x = 3
-        y = 1000
+multi2 = x * 3 + y
+  where
+    x = 3
+    y = 1000
 
-multi3    = x * 5
-  where x = 10 * 5 + y
-        y = 10
+multi3 = x * 5
+  where
+    x = 10 * 5 + y
+    y = 10
+
+multi4 = z / x + y
+  where
+    x = 7
+    y = negate x
+    z = y * 10

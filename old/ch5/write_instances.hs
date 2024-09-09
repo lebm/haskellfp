@@ -20,6 +20,14 @@ instance Eq DayOfWeek where
   (==) Sun Sun = True
   (==) _ _ = False
 
+data Date = Date DayOfWeek Int deriving (Ord, Show)
+
+instance Eq Date where
+  (==)
+    (Date weekday dayOfMonth)
+    (Date weekday' dayOfMonth') =
+      weekday == weekday' && dayOfMonth == dayOfMonth'
+
 data DoW
   = S
   | T
