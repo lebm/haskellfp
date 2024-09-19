@@ -4,9 +4,9 @@ import Data.Char
 
 shftChar :: Int -> Char -> Char
 shftChar n c =
-  case isUpper c of
-    True -> chr (mod (ord c - ord 'A' + (n)) 26 + ord 'A')
-    otherwise -> chr (mod (ord c - ord 'a' + (n)) 26 + ord 'a')
+  chr (mod (ord c - base + (n)) 26 + base)
+  where
+    base = if isUpper c then ord 'A' else ord 'a'
 
 ushftChar :: Int -> Char -> Char
 ushftChar n c = shftChar (-n) c
